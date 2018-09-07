@@ -1,7 +1,7 @@
 {
   "name": "barrelstrength/craftnet-php",
   "description": "A PHP library which implements the functionality of the Craftnet API",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "require": {
     "guzzlehttp/guzzle": "^6.3"
   },

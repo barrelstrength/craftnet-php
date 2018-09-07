@@ -43,6 +43,18 @@ $pluginLicenses = $response->getBody()->getContents();
 $results = json_decode($pluginLicenses);
 ```
 
+## Get a secondary page of plugin licenses for the authenticated Craft ID user
+
+``` php
+$response = $client->pluginLicenses->get([
+  'page' => 2
+]);
+
+$pluginLicenses = $response->getBody()->getContents();
+
+$results = json_decode($pluginLicenses);
+```
+
 ## Get a specific plugin license for the authenticated Craft ID user
 
 ``` php

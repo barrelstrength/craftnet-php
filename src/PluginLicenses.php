@@ -29,11 +29,17 @@ class PluginLicenses
      */
     public function get(array $options = [])
     {
-        if (isset($options['key'])) {
-            return $this->client->get('plugin-licenses/'.$options['key']);
+        $pagination = '';
+
+        if (isset($options['page']) && is_int($options['page'])) {
+            $pagination = '?page='.$options['page'];
         }
 
-        return $this->client->get('plugin-licenses');
+        if (isset($options['key'])) {
+            return $this->client->get('plugin-licenses/'.$options['key'].$pagination);
+        }
+
+        return $this->client->get('plugin-licenses'.$pagination);
     }
 
     /**
